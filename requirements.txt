@@ -1,0 +1,24 @@
+# Web framework + ASGI server
+fastapi==0.162.5
+uvicorn[standard]>=0.52,<0.53
+
+# Validation + settings
+pydantic>=2.9,<3
+pydantic-settings>=2.15,<3
+
+# LangChain (LCEL runtime; OpenAI-compatible client for OpenRouter)
+langchain>=1.4,<2
+langchain-openai>=1.0,<2
+
+# Async HTTP client (LLM gateway probes, tests, outbound calls)
+httpx>=0.27,<1
+
+# OpenAI SDK (pointed at OpenRouter for standalone CLI tools)
+openai>=1.60,<3
+
+# .env loading for local CLI tools (real environment variables take precedence)
+python-dotenv>=1.0,<2
+
+# Dev / test
+pytest>=8,<9
+pytest-asyncio>=0.24

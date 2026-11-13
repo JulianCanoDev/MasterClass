@@ -1,0 +1,14 @@
+# Python runtime artifacts
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local AI runtime state
+.atl/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+!.env.schema
