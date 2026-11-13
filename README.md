@@ -2,6 +2,8 @@
 
 FastAPI + LangChain backend with an OpenRouter-powered LLM gateway, built for production and containerized deployment (Docker/Dokploy).
 
+> 📖 ¿Primeros pasos? Leé la [guía para principiantes en español](docs/guia-principiantes.md) — tecnologías explicadas desde cero.
+
 ## Stack
 
 - **FastAPI** 0.162 — async routing, Pydantic v2 validation, dependency injection
