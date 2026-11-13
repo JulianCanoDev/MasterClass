@@ -123,10 +123,10 @@ uvicorn app.main:app --reload
 
 ```bash
 # Pregunta única (entre comillas)
-python seo_agent.py "¿Cómo posiciono un departamento en Palermo?"
+python app/testing/seo_agent.py "¿Cómo posiciono un departamento en Palermo?"
 
 # Modo conversación (recuerda tus preguntas anteriores)
-python seo_agent.py
+python app/testing/seo_agent.py
 ```
 
 El script lee la clave desde `.env` automáticamente; no necesitas exportar nada.
@@ -155,13 +155,13 @@ git push                              # subir a GitHub
 
 ```
 app/
-  main.py            # fábrica de la app + endpoint /health
-  core/config.py     # configuración tipada (pydantic-settings)
-seo_agent.py         # agente CLI de SEO inmobiliario (OpenRouter)
-requirements.txt     # lista de dependencias
-Dockerfile           # receta de la imagen de producción
-docker-compose.yml   # orquestación local (puerto 8000, recarga en vivo)
-.env.example         # plantilla de secretos (copiar a .env)
+  main.py                # fábrica de la app + endpoint /health
+  core/config.py         # configuración tipada (pydantic-settings)
+  testing/seo_agent.py   # agente CLI de SEO inmobiliario (OpenRouter)
+requirements.txt         # lista de dependencias
+Dockerfile               # receta de la imagen de producción
+docker-compose.yml       # orquestación local (puerto 8000, recarga en vivo)
+.env.example             # plantilla de secretos (copiar a .env)
 ```
 
 ---

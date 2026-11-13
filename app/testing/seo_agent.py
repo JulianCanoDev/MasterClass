@@ -15,10 +15,10 @@ from pathlib import Path
 
 from openai import OpenAI, OpenAIError
 
-try:  # optional: auto-load .env next to this script (real env vars still win)
+try:  # optional: auto-load .env from the project root (real env vars still win)
     from dotenv import load_dotenv
 
-    load_dotenv(Path(__file__).resolve().parent / ".env")
+    load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 except ImportError:
     pass
 
