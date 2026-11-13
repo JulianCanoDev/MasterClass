@@ -192,6 +192,33 @@ docker-compose.yml       # orquestación local (puerto 8000, recarga en vivo)
 
 ---
 
+## Glosario del mundo de la programación con IA (Kilo Code, agentes y más)
+
+Los términos de la tabla explican cómo trabajan las herramientas de IA que configuran este proyecto (Kilo Code, Gentle AI, OpenRouter). Léalos en orden: cada concepto se apoya en el anterior.
+
+| Término | ¿Qué significa? |
+|---------|-----------------|
+| **IA (inteligencia artificial)** | Programas que realizan tareas que antes requerían inteligencia humana: entender lenguaje, escribir código, resumir documentos. |
+| **LLM (modelo de lenguaje)** | El "cerebro" detrás de la IA de texto: lee y escribe lenguaje natural y código (ej.: GPT, Claude, DeepSeek). Adivina la palabra siguiente más probable, una y otra vez, con muchísimo entrenamiento detrás. |
+| **Prompt** | La instrucción que le das a la IA. La calidad del resultado depende de la claridad del pedido. |
+| **Prompt de sistema** | Las reglas ocultas que definen cómo debe comportarse la IA (su rol y estilo). En este proyecto, `seo_agent.py` lleva una: "eres un experto en SEO inmobiliario". |
+| **Agente de IA** | Una IA que no solo conversa: planifica y ejecuta tareas usando herramientas (leer archivos, editar código, correr comandos). Tú pides el resultado; él decide los pasos. |
+| **Kilo Code** | El agente de programación con IA usado en este proyecto: funciona dentro del editor (VS Code), lee tu código, edita archivos, ejecuta comandos y verifica su propio trabajo. |
+| **Vibe Coding** | Estilo de programar donde describes qué quieres en lenguaje natural y el agente escribe el código. Tú conduces la intención, la IA ejecuta. Funciona bien si revisas lo que produce; es peligroso si confías a ciegas. |
+| **Herramientas (tools)** | Las capacidades concretas del agente: leer archivos, editarlos, ejecutar comandos de terminal, buscar en el código. Sin herramientas, un agente solo puede conversar. |
+| **Subagente** | Agente secundario que el principal lanza para una tarea acotada (explorar el código, revisar un cambio) sin contaminar su propia conversación. |
+| **SDD (Spec-Driven Development)** | "Desarrollo guiado por especificaciones": antes de escribir código, se define por escrito qué debe hacer el sistema (endpoints, flujos, reglas) y la IA programa contra esa especificación. Menos improvisación, menos rework. |
+| **ODD (Organic Driven Development)** | Evolución de SDD usada por Gentle AI: los cambios chicos van directo al código, y solo el trabajo grande merece un documento de especificación recuperable. Proporcional al riesgo, no al tamaño. |
+| **Skills (librería de habilidades)** | Instrucciones especializadas que el agente carga automáticamente cuando la tarea coincide: una para FastAPI, otra para Docker, otra para testing. Es la "biblioteca de experiencia" del agente. |
+| **Gentle AI** | El framework que configura los agentes de IA de este proyecto: instala skills, memoria persistente y flujos de trabajo (ODD) sobre el agente que ya usas. |
+| **MCP (Model Context Protocol)** | Estándar para conectar herramientas externas al agente, como enchufes a una regleta. Ejemplo: Context7 le da al agente documentación actualizada de librerías en vivo. |
+| **Memoria persistente** | El agente guarda decisiones y aprendizajes entre sesiones (con Engram): hoy resuelve algo, mañana recuerda cómo lo hizo sin que se lo expliques de nuevo. |
+| **Contexto / ventana de contexto** | Todo el texto que el modelo puede "ver" a la vez (tu código, la conversación, los archivos leídos). Es finito: cuando se llena, lo viejo se comprime u olvida. |
+| **Token** | La unidad en que se mide y cobra el texto: 1 token ≈ ¾ de palabra. Más contexto y respuestas largas = más tokens = más costo. |
+| **Alucinación** | Cuando la IA afirma algo incorrecto con total seguridad (una función que no existe, un comando inventado). Se combate verificando: por eso este proyecto prueba todo antes de darlo por bueno. |
+
+---
+
 ## Checklist de arranque exitoso
 
 - [ ] `python3 --version` responde 3.12+
